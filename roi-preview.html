@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROI Card — Layout Options</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Rajdhani:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #e8edf2;
+      padding: 40px 20px;
+      color: #1a202c;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 40px;
+    }
+
+    .page {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .option {
+      width: 340px;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    }
+
+    .option-label {
+      background: #0b3d4a;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .option-label .tag {
+      background: rgba(255,255,255,0.15);
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 10px;
+    }
+
+    .card-wrap {
+      padding: 20px;
+      background: #c8cdd8;
+    }
+
+    /* ─── LAYOUT A — Bank Statement Grid ─── */
+    .card-a {
+      background: #fafaf8;
+      border: 1px solid #e8e5df;
+      border-radius: 8px;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .card-a .roi-header {
+      padding: 12px 16px 10px;
+      border-bottom: 1px solid #f0ede8;
+    }
+
+    .card-a .roi-header .rsh-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-a .roi-header .rsh-line {
+      flex: 1;
+      height: 1px;
+      background: #e8e5df;
+    }
+
+    .card-a .roi-header .rsh-title {
+      font-size: 7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #9ca3af;
+    }
+
+    .card-a .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .card-a .cell {
+      padding: 16px 18px;
+      border-right: 1px solid #f0ede8;
+      border-bottom: 1px solid #f0ede8;
+    }
+
+    .card-a .cell:nth-child(2),
+    .card-a .cell:nth-child(4) { border-right: none; }
+
+    .card-a .cell:nth-child(3),
+    .card-a .cell:nth-child(4) { border-bottom: none; }
+
+    .card-a .cell-label {
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #9ca3af;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .card-a .cell-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 22pt;
+      font-weight: 600;
+      line-height: 1;
+      color: #0b3d4a;
+      display: block;
+      letter-spacing: -0.5px;
+    }
+
+    .card-a .cell-value.highlight {
+      color: #b45309;
+    }
+
+    .card-a .cell-sub {
+      font-size: 7pt;
+      color: #9ca3af;
+      margin-top: 5px;
+      display: block;
+    }
+
+    .card-a .cell.featured {
+      background: #fffdf5;
+      border-right: 1px solid #f5e6c8;
+      border-bottom: 1px solid #f5e6c8;
+      position: relative;
+    }
+
+    .card-a .cell.featured::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      background: #d97706;
+    }
+
+    /* ─── LAYOUT B — Hero + Strip ─── */
+    .card-b {
+      background: white;
+      border: 1px solid #e8e5df;
+      border-radius: 8px;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      border-top: 3px solid #d97706;
+    }
+
+    .card-b .hero {
+      padding: 18px 18px 14px;
+      border-bottom: 1px solid #f0ede8;
+    }
+
+    .card-b .hero-label {
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #9ca3af;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .card-b .hero-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 34pt;
+      font-weight: 700;
+      line-height: 1;
+      color: #0b3d4a;
+      letter-spacing: -1px;
+      display: block;
+    }
+
+    .card-b .hero-sub {
+      font-size: 7.5pt;
+      color: #6b7280;
+      margin-top: 6px;
+      display: block;
+    }
+
+    .card-b .strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border-top: 1px solid #f0ede8;
+    }
+
+    .card-b .strip-cell {
+      padding: 12px 14px;
+      border-right: 1px solid #f0ede8;
+    }
+
+    .card-b .strip-cell:last-child { border-right: none; }
+
+    .card-b .strip-label {
+      font-size: 6pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #9ca3af;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .card-b .strip-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13pt;
+      font-weight: 600;
+      color: #374151;
+      display: block;
+      line-height: 1;
+      letter-spacing: -0.3px;
+    }
+
+    .card-b .strip-sub {
+      font-size: 6pt;
+      color: #9ca3af;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* ─── LAYOUT C — Certificate Anchor ─── */
+    .card-c {
+      background: #fdfcf9;
+      border: 1px solid #e8e5df;
+      border-radius: 8px;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .card-c .anchor-block {
+      padding: 18px 18px 16px;
+      text-align: center;
+      border-bottom: 1px solid #f0ede8;
+    }
+
+    .card-c .anchor-label {
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #9ca3af;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .card-c .anchor-year {
+      display: inline-block;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 26pt;
+      font-weight: 700;
+      color: white;
+      background: #0b3d4a;
+      padding: 8px 24px;
+      border-radius: 6px;
+      letter-spacing: 3px;
+      line-height: 1;
+    }
+
+    .card-c .anchor-sub {
+      font-size: 7pt;
+      color: #9ca3af;
+      margin-top: 8px;
+      display: block;
+    }
+
+    .card-c .metrics-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .card-c .m-cell {
+      padding: 12px 10px;
+      border-right: 1px solid #f0ede8;
+      text-align: center;
+    }
+
+    .card-c .m-cell:last-child { border-right: none; }
+
+    .card-c .m-cell:first-child {
+      border-left: 3px solid #d97706;
+      background: #fffdf5;
+    }
+
+    .card-c .m-label {
+      font-size: 5.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #9ca3af;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .card-c .m-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12pt;
+      font-weight: 600;
+      color: #0b3d4a;
+      display: block;
+      line-height: 1;
+      letter-spacing: -0.3px;
+    }
+
+    .card-c .m-cell:first-child .m-value {
+      color: #b45309;
+    }
+
+    .card-c .m-sub {
+      font-size: 5.5pt;
+      color: #9ca3af;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* Description below each card */
+    .desc {
+      padding: 14px 16px;
+      background: white;
+      border-top: 1px solid #f0ede8;
+      font-size: 11px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+
+    .desc strong { color: #374151; }
+  </style>
+</head>
+<body>
+
+<h1>ROI Card — 3 Layout Options</h1>
+
+<div class="page">
+
+  <!-- ── OPTION A ── -->
+  <div class="option">
+    <div class="option-label">
+      Option A <span class="tag">Bank Statement Grid</span>
+    </div>
+    <div class="card-wrap">
+      <div class="card-a">
+        <div class="roi-header">
+          <div class="rsh-wrap">
+            <div class="rsh-line"></div>
+            <div class="rsh-title">Your Return On Investment</div>
+            <div class="rsh-line"></div>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="cell featured">
+            <span class="cell-label">Bi-Monthly Saving</span>
+            <span class="cell-value highlight">₹4,200</span>
+            <span class="cell-sub">avg. per TNEB bill cycle</span>
+          </div>
+          <div class="cell">
+            <span class="cell-label">Annual Saving</span>
+            <span class="cell-value">₹25,200</span>
+            <span class="cell-sub">per year</span>
+          </div>
+          <div class="cell">
+            <span class="cell-label">Payback Period</span>
+            <span class="cell-value">4.2 yrs</span>
+            <span class="cell-sub">investment recovered</span>
+          </div>
+          <div class="cell">
+            <span class="cell-label">30-Year Net Gain</span>
+            <span class="cell-value">₹8.4L</span>
+            <span class="cell-sub">total benefit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <strong>Feel:</strong> Bank passbook / LIC statement. All 4 metrics equal weight. Gold accent only on the most emotionally real number — the bi-monthly saving. Clean, credible, no decoration.
+    </div>
+  </div>
+
+  <!-- ── OPTION B ── -->
+  <div class="option">
+    <div class="option-label">
+      Option B <span class="tag">Hero + Strip</span>
+    </div>
+    <div class="card-wrap">
+      <div class="card-b">
+        <div class="hero">
+          <span class="hero-label">You save every bi-monthly bill</span>
+          <span class="hero-value">₹4,200</span>
+          <span class="hero-sub">Average saving per TNEB bill cycle · 5.5kW system</span>
+        </div>
+        <div class="strip">
+          <div class="strip-cell">
+            <span class="strip-label">Annual</span>
+            <span class="strip-value">₹25,200</span>
+            <span class="strip-sub">per year</span>
+          </div>
+          <div class="strip-cell">
+            <span class="strip-label">Payback</span>
+            <span class="strip-value">4.2 yrs</span>
+            <span class="strip-sub">recovery</span>
+          </div>
+          <div class="strip-cell">
+            <span class="strip-label">30-Yr Gain</span>
+            <span class="strip-value">₹8.4L</span>
+            <span class="strip-sub">net benefit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <strong>Feel:</strong> Immediate and punchy. Eye lands on the bi-monthly saving first — the number the homeowner feels every bill. Supporting metrics follow. Gold top border signals premium without overwhelming.
+    </div>
+  </div>
+
+  <!-- ── OPTION C ── -->
+  <div class="option">
+    <div class="option-label">
+      Option C <span class="tag">Certificate Anchor</span>
+    </div>
+    <div class="card-wrap">
+      <div class="card-c">
+        <div class="anchor-block">
+          <span class="anchor-label">Your investment is recovered by</span>
+          <span class="anchor-year">YEAR 2029</span>
+          <span class="anchor-sub">Then every rupee saved is pure profit for the next 25 years</span>
+        </div>
+        <div class="metrics-strip">
+          <div class="m-cell">
+            <span class="m-label">Bi-Monthly</span>
+            <span class="m-value">₹4,200</span>
+            <span class="m-sub">per bill</span>
+          </div>
+          <div class="m-cell">
+            <span class="m-label">Annual</span>
+            <span class="m-value">₹25,200</span>
+            <span class="m-sub">per year</span>
+          </div>
+          <div class="m-cell">
+            <span class="m-label">Payback</span>
+            <span class="m-value">4.2 yrs</span>
+            <span class="m-sub">recovery</span>
+          </div>
+          <div class="m-cell">
+            <span class="m-label">30-Yr Gain</span>
+            <span class="m-value">₹8.4L</span>
+            <span class="m-sub">net benefit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <strong>Feel:</strong> Certificate / official document. The payback year is the emotional anchor — it directly addresses the homeowner's biggest fear (losing money). Metrics below are supporting evidence.
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

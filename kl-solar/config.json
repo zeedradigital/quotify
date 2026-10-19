@@ -1,0 +1,18 @@
+{
+  "name":         "KL Solar Tech",
+  "tagline":      "Where Sunlight Meets Precision",
+  "logoUrl":      "https://assets.zeedra.in/images/kl-solar-logo.webp",
+  "address":      "No.70, Vijaya Sarathy Nagar, Kainoor Village, Arakkonam-631003",
+  "addressShort": "Arakkonam-631003, Tamil Nadu",
+  "phone":        "8124206864",
+  "mdName":       "",
+  "lhBg":         "#FFF176",
+  "lhBorder":     "#FFBE01",
+  "gstinLine":    "GSTIN: 33CANPT0451R1Z2<br/>klsolartech.com | klsolartech25@email.com",
+  "bank": {
+    "name":   "State Bank of India",
+    "branch": "Arakkonam",
+    "accNo":  "44454558096",
+    "ifsc":   "SBIN0000793"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Quotify Demo",
+  "tagline": "Quote Fast. Close Faster.",
+  "logoUrl": "https://assets.zeedra.in/images/logo.webp",
+  "address": "Zeedra Digital, Tamil Nadu",
+  "addressShort": "Tamil Nadu, India",
+  "phone": "",
+  "mdName": "",
+  "lhBg": "#ffffff",
+  "lhBorder": "#e2e8f0",
+  "gstinLine": "Powered by Zeedra Digital",
+  "refPrefix": "QD",
+  "bank": {
+    "name": "",
+    "branch": "",
+    "accNo": "",
+    "ifsc": ""
+  },
+  "adminPin": "9999",
+  "demo": true,
+  "visits": true
+}

@@ -1,0 +1,20 @@
+﻿{
+  "name":         "Kay-Tech Solar",
+  "tagline":      "A Complete Solar Solution",
+  "logoUrl":      "/kaytechsolar/logo/imgi_1_k.png",
+  "refPrefix":    "KT",
+  "staffTracking": true,
+  "address":      "",
+  "addressShort": "",
+  "phone":        "",
+  "mdName":       "",
+  "lhBg":         "#ffffff",
+  "lhBorder":     "#e2e8f0",
+  "gstinLine":    "",
+  "bank": {
+    "name":   "",
+    "branch": "",
+    "accNo":  "",
+    "ifsc":   ""
+  }
+}

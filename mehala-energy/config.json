@@ -1,0 +1,19 @@
+{
+  "name":         "Mehala Energy Solution",
+  "tagline":      "Powering a Brighter Tomorrow",
+  "logoUrl":      "https://assets.zeedra.in/images/mehala-logo.jpg",
+  "address":      "Chennimalai, Tamil Nadu",
+  "addressShort": "Chennimalai, Tamil Nadu",
+  "phone":        "+91 99424 91684",
+  "mdName":       "S. Ramakrishna",
+  "lhBg":         "#ffffff",
+  "lhBorder":     "#e2e8f0",
+  "gstinLine":    "mehalaenergysolution@gmail.com<br/>www.mehalaenergy.com",
+  "refPrefix":    "MSE",
+  "bank": {
+    "name":   "Punjab National Bank",
+    "branch": "Chennimalai",
+    "accNo":  "0165002100051687",
+    "ifsc":   "PUNB0589300"
+  }
+}

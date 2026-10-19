@@ -1,0 +1,9 @@
+# Files that must never be published to quote.zeedra.in
+# (Vercel ignores .gitignore — only this file controls uploads)
+deploy.bat
+quotify-setup.sql
+Solar saver Estimate.xlsx
+TNEB_New_Tariff2.jpg
+roi-preview.html
+test/
+.gitignore

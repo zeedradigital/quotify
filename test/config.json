@@ -1,0 +1,20 @@
+{
+  "name": "Test Client",
+  "tagline": "Testing Environment",
+  "logoUrl": "",
+  "address": "Test Address",
+  "addressShort": "Test City",
+  "phone": "9999999999",
+  "mdName": "Test MD",
+  "lhBg": "#ffffff",
+  "lhBorder": "#e2e8f0",
+  "gstinLine": "GSTIN: TEST123",
+  "bank": {
+    "name": "Test Bank",
+    "branch": "Test Branch",
+    "accNo": "0000000000",
+    "ifsc": "TEST0000000"
+  },
+  "adminPin": "9999",
+  "visits": true
+}
